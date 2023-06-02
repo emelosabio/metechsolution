@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Agendamento</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+    
+    h1 {
+      text-align: center;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    th, td {
+      text-align: center;
+      padding: 10px;
+    }
+    
+    th {
+      background-color: #f2f2f2;
+    }
+    
+    td {
+      cursor: pointer;
+    }
+    
+    td:hover {
+      background-color: #f2f2f2;
+    }
+    
+    .schedule-info {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .logo-img {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 80px;
+      height: 65px;
+    }
+    .message {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+      text-align: center;
+    }
+    
+    .message p {
+      font-size: 18px;
+      margin: 0;
+    }
+    
+    .message .date {
+      font-weight: bold;
+    }
+    
+    .message .reason {
+      color: #000000;
+    }
+    .button {
+     padding: 10px 20px;
+     background-color: #000000;
+     color: #fff;
+     border: none;
+      border-radius: 3px;
+      cursor: pointer;
+     transition: background-color 0.3s;
+    }
+
+      .button:hover {
+       background-color: #fff;
+       color: #000000;
+       }
+  </style>
+  <script>
+    function selectDay(element) {
+      var day = element.innerText;
+      var messageBox = document.getElementById("message-box");
+      var messageText = document.getElementById("message-text");
+      var date = document.getElementById("date");
+      var reason = document.getElementById("reason");
+      
+      date.innerText = "Dia " + day;
+      reason.innerText = "Motivo: Algum motivo do agendamento";
+      messageBox.style.display = "center";
+    }
+    
+    function closeMessageBox() {
+      var messageBox = document.getElementById("message-box");
+      messageBox.style.display = "none";
+    }
+  </script>
+</head>
+<body>
+    <img class="logo-img" src="logo.png" alt="Logo">
+  <h1>Agendamento de Serviços</h1>
+  
+  <table>
+    <tr>
+      <th>Domingo</th>
+      <th>Segunda</th>
+      <th>Terça</th>
+      <th>Quarta</th>
+      <th>Quinta</th>
+      <th>Sexta</th>
+      <th>Sábado</th>
+    </tr>
+    <tr>
+      <td onclick="selectDay(this)">1</td>
+      <td onclick="selectDay(this)">2</td>
+      <td onclick="selectDay(this)">3</td>
+      <td onclick="selectDay(this)">4</td>
+      <td onclick="selectDay(this)">5</td>
+      <td onclick="selectDay(this)">6</td>
+      <td onclick="selectDay(this)">7</td>
+    </tr>
+    <tr>
+        <td onclick="selectDay(this)">8</td>
+        <td onclick="selectDay(this)">9</td>
+        <td onclick="selectDay(this)">10</td>
+        <td onclick="selectDay(this)">11</td>
+        <td onclick="selectDay(this)">12</td>
+        <td onclick="selectDay(this)">13</td>
+        <td onclick="selectDay(this)">14</td>
+      </tr>
+      <tr>
+        <td onclick="selectDay(this)">15</td>
+        <td onclick="selectDay(this)">16</td>
+        <td onclick="selectDay(this)">17</td>
+        <td onclick="selectDay(this)">18</td>
+        <td onclick="selectDay(this)">19</td>
+        <td onclick="selectDay(this)">20</td>
+        <td onclick="selectDay(this)">21</td>
+      </tr>
+      <tr>
+        <td onclick="selectDay(this)">22</td>
+        <td onclick="selectDay(this)">23</td>
+        <td onclick="selectDay(this)">24</td>
+        <td onclick="selectDay(this)">25</td>
+        <td onclick="selectDay(this)">26</td>
+        <td onclick="selectDay(this)">27</td>
+        <td onclick="selectDay(this)">28</td>
+      </tr>
+      <tr>
+        <td onclick="selectDay(this)">29</td>
+        <td onclick="selectDay(this)">30</td>
+      </tr>
+  </table>
+  <div id="message-box" class="overlay">
+    <div class="message">
+      <p id="date" class="date"></p>
+      <p id="reason" class="reason"></p>
+      <button class="button" onclick="closeMessageBox()" href="home.html">Concluir Chamado</button>
+    </div>
+  </div>
+</body>
+</html>

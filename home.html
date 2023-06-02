@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tela Inicial</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    
+    .logo {
+      width: 80px;
+      height: 65px;
+    }
+    
+    .logout-button {
+      background-color: #ff0000;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    .logout-button:hover {
+      background-color: #ff3333;
+    }
+    
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    
+    .button {
+      width: calc(50% - 10px);
+      height: 150px;
+      margin: 5px;
+      background-color: #000000;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #ffffff;
+    }
+    
+    .button:hover {
+      background-color: #4b4b4b;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img class="logo" src="logo.png" alt="Logo">
+    <button class="logout-button" onclick="window.location.href='index.html'">Sair</button>
+  </div>
+  
+  <div class="buttons">
+    <a class="button" href="agendamento.html">Agendamento</a>
+    <a class="button" href="anydesk://">Suporte Remoto</a>
+    <a class="button" href="https://zoom.us/join">Videoconferência</a>
+  </div>
+</body>
+</html>
